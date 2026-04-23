@@ -1,5 +1,11 @@
-from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from schemas.livro import BrinquedoCreate, LivroOut
-from services.emprestimo_service import (
-)
+class EmprestimoCreate(BaseModel):
+    id_crianca: int
+    id_brinquedo: int
+   
+
+class EmprestimoOut(BaseModel):
+    id: int
+    id_crianca: int
+    status: bool
+    

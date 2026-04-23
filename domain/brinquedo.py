@@ -9,8 +9,8 @@ class brinquedo:
 
 @router.get("/{codigo}", response_model=ProdutoOut)
 def obter(codigo: int):
-    produto = service.obter_produto(codigo)
-    if not produto:
-        raise HTTPException(status_code=404, detail="Produto não encontrado")
-    return ProdutoOut(**produto.__dict__)
+    brinquedo = service.obter_brinquedo(codigo)
+    if not brinquedo:
+        raise HTTPException(status_code=404, detail="Brinquedo não encontrado")
+    return BrinquedoOut(**brinquedo.__dict__)
 
